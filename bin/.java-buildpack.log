@@ -1,0 +1,54 @@
+# Logfile created on 2015-07-24 11:08:17 +0900 by logger.rb/31641
+2015-07-24T11:08:17.09+0900 [ConfigurationUtils]             DEBUG No configuration file /home/michael/Open_PaaS/java-buildpack-master/config/version.yml found
+2015-07-24T11:08:17.12+0900 [BuildpackVersion]               DEBUG unknown
+2015-07-24T11:08:17.12+0900 [Buildpack]                      DEBUG Environment Variables: {"REMOTEHOST"=>"Michaelui-MacBook-Air.local", "XDG_SESSION_ID"=>"c105", "TS_ENV"=>"auto", "SANT_HOME"=>"/home/michael/sant", "WASP_HOME"=>"/home/michael/wasp6", "SHELL"=>"/bin/bash", "TERM"=>"xterm-new", "XDG_SESSION_COOKIE"=>"02dc0f57fb2d1b1f2ee31d794aa0c9ec-1437700243.25289-354828373", "HUSHLOGIN"=>"FALSE", "ANT_OPTS"=>"-XX:MaxPermSize=1024m -Djava.endorsed.dirs=/home/michael/jeus5027svn/lib/endorsed", "USER"=>"michael", "LD_LIBRARY_PATH"=>"/home/michael/jeus5027svn/webserver/lib", "LS_COLORS"=>"", "TS_HOME"=>"/home/michael/wasp6", "MAIL"=>"/var/mail/michael", "PATH"=>"/home/michael/apache2217/bin:/home/michael/wasp6/bin:/home/michael/sant/bin:/home/michael/jeus5027svn/bin:/home/michael/jeus5027svn/webserver/bin:/opt/jdk1.5.0_22/bin:/opt/jdk1.6.0_31/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/michael/bin:/home/michael/decompiler:./", "TOOL_CLASSPATH"=>"/home/michael/jeus5027svn/lib/system/jext.jar:/home/michael/jeus5027svn/lib/system/jms.jar:/home/michael/jeus5027svn/lib/client/jclient.jar:/home/michael/jeus5027svn/lib/client/clientcontainer.jar:/home/michael/jeus5027svn/lib/client/jclient_jaxb.jar", "QT_QPA_PLATFORMTHEME"=>"appmenu-qt5", "PWD"=>"/home/michael/Open_PaaS/java-buildpack-master/bin", "JAVA_HOME"=>"/opt/jdk1.5.0_22", "LAX_DEBUG"=>"true", "LANG"=>"C", "PS1"=>"[\\e[0;32m\\u\\e[0m \\e[0;31m${PWD}\\e[0;37m]\\$ ", "BROKER_NAME"=>"jeus6michael", "HISTCONTROL"=>"ignoreboth", "SPEECHD_PORT"=>"7560", "JDK_HOME"=>"/opt/jdk1.5.0_22", "SHLVL"=>"1", "HOME"=>"/home/michael", "JEUS_HOME"=>"/home/michael/jeus5027svn", "LOGNAME"=>"michael", "LESSOPEN"=>"| /usr/bin/lesspipe %s", "XDG_RUNTIME_DIR"=>"/run/user/1000", "LESSCLOSE"=>"/usr/bin/lesspipe %s %s", "_"=>"./detect", "OLDPWD"=>"/home/michael/Open_PaaS/java-buildpack-master"}
+2015-07-24T11:08:17.12+0900 [ConfigurationUtils]             DEBUG Configuration from /home/michael/Open_PaaS/java-buildpack-master/config/components.yml: {"containers"=>["JavaBuildpack::Container::DistZip", "JavaBuildpack::Container::Groovy", "JavaBuildpack::Container::JavaMain", "JavaBuildpack::Container::PlayFramework", "JavaBuildpack::Container::Ratpack", "JavaBuildpack::Container::SpringBoot", "JavaBuildpack::Container::SpringBootCLI", "JavaBuildpack::Container::Tomcat"], "jres"=>["JavaBuildpack::Jre::OpenJdkJRE"], "frameworks"=>["JavaBuildpack::Framework::AppDynamicsAgent", "JavaBuildpack::Framework::JavaOpts", "JavaBuildpack::Framework::JrebelAgent", "JavaBuildpack::Framework::MariaDbJDBC", "JavaBuildpack::Framework::NewRelicAgent", "JavaBuildpack::Framework::PlayFrameworkAutoReconfiguration", "JavaBuildpack::Framework::PlayFrameworkJPAPlugin", "JavaBuildpack::Framework::PostgresqlJDBC", "JavaBuildpack::Framework::SpringAutoReconfiguration", "JavaBuildpack::Framework::SpringInsight"]}
+2015-07-24T11:08:17.13+0900 [Buildpack]                      DEBUG Instantiating JavaBuildpack::Jre::OpenJdkJRE
+2015-07-24T11:08:17.31+0900 [Buildpack]                      DEBUG Successfully required JavaBuildpack::Jre::OpenJdkJRE
+2015-07-24T11:08:17.33+0900 [ConfigurationUtils]             DEBUG Configuration from /home/michael/Open_PaaS/java-buildpack-master/config/open_jdk_jre.yml: {"jre"=>{"version"=>"1.8.0_+", "repository_root"=>"{default.repository.root}/openjdk/{platform}/{architecture}"}, "memory_calculator"=>{"version"=>"1.+", "repository_root"=>"{default.repository.root}/memory-calculator/{platform}/{architecture}", "memory_sizes"=>{"heap"=>nil, "metaspace"=>"64m..", "native"=>nil, "permgen"=>"64m..", "stack"=>nil}, "memory_heuristics"=>{"heap"=>75, "metaspace"=>10, "native"=>10, "permgen"=>10, "stack"=>5}}}
+2015-07-24T11:08:17.33+0900 [ConfigurationUtils]             DEBUG Configuration from /home/michael/Open_PaaS/java-buildpack-master/config/repository.yml: {"default_repository_root"=>"https://download.run.pivotal.io"}
+2015-07-24T11:08:17.34+0900 [RepositoryIndex]                DEBUG {default.repository.root}/memory-calculator/{platform}/{architecture} expanded to https://download.run.pivotal.io/memory-calculator/as3/i686
+2015-07-24T11:08:17.34+0900 [ConfigurationUtils]             DEBUG Configuration from /home/michael/Open_PaaS/java-buildpack-master/config/cache.yml: {"remote_downloads"=>"enabled"}
+2015-07-24T11:08:17.35+0900 [DownloadCache]                  DEBUG Proxy: , , , 
+2015-07-24T11:08:17.35+0900 [DownloadCache]                  DEBUG Adding HTTP options for secure connection
+2015-07-24T11:08:17.90+0900 [DownloadCache]                  DEBUG Adding HTTP options for secure connection
+2015-07-24T11:08:17.90+0900 [DownloadCache]                  DEBUG HTTP: download.run.pivotal.io, 443, {:use_ssl=>true}
+2015-07-24T11:08:17.90+0900 [DownloadCache]                  DEBUG SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES128-GCM-SHA256
+    Session-ID: BABD1DB7F4FE02090419C843289EA854661DB6F56AD5719C3B3C28EE0AB0C1F5
+    Session-ID-ctx: 
+    Master-Key: 5310197B32E3300FA2B88A7254858E9B03600E4DBAD16A17CAA6BA086061DE45921BC3DEAC69D840D64A1D59027419E4
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 10800 (seconds)
+    TLS session ticket:
+    0000 - cf f3 56 c2 9a c2 9c f8-fd 2e 70 97 5c 5a 50 01   ..V.......p.\ZP.
+    0010 - a5 1c 17 07 f7 a8 fb 9c-10 21 07 39 c0 51 97 7d   .........!.9.Q.}
+    0020 - 17 f5 af d8 28 5c ee 91-ac 12 0c 71 6b 73 e8 d9   ....(\.....qks..
+    0030 - cc 62 9d 51 c4 1f 96 c0-bb 39 63 db 3a 1e 2f dd   .b.Q.....9c.:./.
+    0040 - eb 47 98 88 91 84 0f 07-95 2c 3b bd eb 76 21 f5   .G.......,;..v!.
+    0050 - 98 be ea 99 ff 58 8b c6-a0 eb 0e de 5c f1 a2 f6   .....X......\...
+    0060 - de df 0d b3 bc 49 ac 72-ac 69 49 6d 78 26 41 1e   .....I.r.iImx&A.
+    0070 - 6e b3 8e e9 77 fa 1e ef-09 a2 35 95 b0 e6 c7 87   n...w.....5.....
+    0080 - 5c 53 60 b4 c0 4f bb 45-8a f1 b7 60 4a 88 81 c0   \S`..O.E...`J...
+    0090 - 5a e5 b8 34 cd 58 7a 4c-ee 03 05 47 e0 58 3d b1   Z..4.XzL...G.X=.
+    00a0 - 89 71 1b b8 2e c0 8a 0e-44 7c a0 b0 3c f0 a3 e3   .q......D|..<...
+
+    Start Time: 1437703697
+    Timeout   : 300 (sec)
+    Verify return code: 0 (ok)
+
+2015-07-24T11:08:17.90+0900 [DownloadCache]                  DEBUG Request: /memory-calculator/as3/i686/index.yml, {"accept"=>["*/*"], "user-agent"=>["Ruby"]}
+2015-07-24T11:08:18.81+0900 [DownloadCache]                  DEBUG Status: 404
+2015-07-24T11:08:18.81+0900 [DownloadCache]                  WARN  Request failure 1, retrying: Bad response: #<Net::HTTPNotFound:0x93186f8>
+2015-07-24T11:08:18.85+0900 [DownloadCache]                  DEBUG Status: 404
+2015-07-24T11:08:18.85+0900 [DownloadCache]                  WARN  Request failure 2, retrying: Bad response: #<Net::HTTPNotFound:0x92d2518>
+2015-07-24T11:08:24.79+0900 [DownloadCache]                  DEBUG Status: 404
+2015-07-24T11:08:24.79+0900 [DownloadCache]                  WARN  Request failure 3, retrying: Bad response: #<Net::HTTPNotFound:0x92cf958>
+2015-07-24T11:08:29.83+0900 [DownloadCache]                  DEBUG Status: 404
+2015-07-24T11:08:29.83+0900 [DownloadCache]                  WARN  Request failure 4, retrying: Bad response: #<Net::HTTPNotFound:0x92cb6c8>
+2015-07-24T11:08:29.91+0900 [DownloadCache]                  DEBUG Status: 404
+2015-07-24T11:08:29.91+0900 [DownloadCache]                  WARN  Request failure 5, retrying: Bad response: #<Net::HTTPNotFound:0x9428160>
