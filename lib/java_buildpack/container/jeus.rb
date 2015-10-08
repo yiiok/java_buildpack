@@ -16,13 +16,13 @@
 
 require 'java_buildpack/component/modular_component'
 require 'java_buildpack/container'
-require 'java_buildpack/container/tomcat/tomcat_insight_support'
-require 'java_buildpack/container/tomcat/tomcat_instance'
-require 'java_buildpack/container/tomcat/tomcat_lifecycle_support'
-require 'java_buildpack/container/tomcat/tomcat_logging_support'
-require 'java_buildpack/container/tomcat/tomcat_access_logging_support'
-require 'java_buildpack/container/tomcat/tomcat_redis_store'
-require 'java_buildpack/container/tomcat/tomcat_gemfire_store'
+require 'java_buildpack/container/jeus/jeus_insight_support'
+require 'java_buildpack/container/jeus/jeus_instance'
+require 'java_buildpack/container/jeus/jeus_lifecycle_support'
+require 'java_buildpack/container/jeus/jeus_logging_support'
+require 'java_buildpack/container/jeus/jeus_access_logging_support'
+require 'java_buildpack/container/jeus/jeus_redis_store'
+require 'java_buildpack/container/jeus/jeus_gemfire_store'
 require 'java_buildpack/util/java_main_utils'
 
 module JavaBuildpack
@@ -48,13 +48,13 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::ModularComponent#sub_components)
       def sub_components(context)
         [
-          TomcatInstance.new(sub_configuration_context(context, 'tomcat')),
-          TomcatLifecycleSupport.new(sub_configuration_context(context, 'lifecycle_support')),
-          TomcatLoggingSupport.new(sub_configuration_context(context, 'logging_support')),
-          TomcatAccessLoggingSupport.new(sub_configuration_context(context, 'access_logging_support')),
-          TomcatRedisStore.new(sub_configuration_context(context, 'redis_store')),
-          TomcatGemfireStore.new(sub_configuration_context(context, 'gemfire_store')),
-          TomcatInsightSupport.new(context)
+          JeusInstance.new(sub_configuration_context(context, 'jeus')),
+          JeusLifecycleSupport.new(sub_configuration_context(context, 'lifecycle_support')),
+          JeusLoggingSupport.new(sub_configuration_context(context, 'logging_support')),
+          JeusAccessLoggingSupport.new(sub_configuration_context(context, 'access_logging_support')),
+          JeusRedisStore.new(sub_configuration_context(context, 'redis_store')),
+          JeusGemfireStore.new(sub_configuration_context(context, 'gemfire_store')),
+          JeusInsightSupport.new(context)
         ]
       end
 
