@@ -39,7 +39,7 @@ module Package
 
       @default_repository_root = default_repository_root
       @cache                   = cache
-      @monitor                 = Monitor.new
+      ㅡ@monitor                 = Monitor.new
 
       configurations = component_ids.map { |component_id| component_configuration(component_id) }.flatten
       uris(configurations).each { |uri| multitask PACKAGE_NAME => [cache_task(uri)] }
