@@ -17,16 +17,16 @@
 ---
 jeus:
   version: 8.0.+
-  repository_root: ! '{default.repository.root}/jeus'
+  repository_root: ! '{default.repository.root}/tomcat'
 lifecycle_support:
   version: 2.+
-  repository_root: ! '{default.repository.root}/jeus-lifecycle-support'
+  repository_root: ! '{default.repository.root}/tomcat-lifecycle-support'
 logging_support:
   version: 2.+
-  repository_root: ! '{default.repository.root}/jeus-logging-support'
+  repository_root: ! '{default.repository.root}/tomcat-logging-support'
 access_logging_support:
   version: 2.+
-  repository_root: ! '{default.repository.root}/jeus-access-logging-support'
+  repository_root: ! '{default.repository.root}/tomcat-access-logging-support'
   access_logging: disabled
 redis_store:
   version: 1.+
@@ -43,7 +43,7 @@ gemfire_store:
     repository_root: ! '{default.repository.root}/gem-fire-modules'
   gemfire_modules_jeus7:
     version: 8.0.+
-    repository_root: ! '{default.repository.root}/gem-fire-modules-jeus7'
+    repository_root: ! '{default.repository.root}/gem-fire-modules-tomcat7'
   gemfire_security:
     version: 8.0.+
     repository_root: ! '{default.repository.root}/gem-fire-security'
