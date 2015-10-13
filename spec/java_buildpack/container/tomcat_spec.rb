@@ -17,28 +17,28 @@
 require 'spec_helper'
 require 'component_helper'
 require 'fileutils'
-require 'java_buildpack/container/tomcat'
-require 'java_buildpack/container/tomcat/tomcat_insight_support'
-require 'java_buildpack/container/tomcat/tomcat_instance'
-require 'java_buildpack/container/tomcat/tomcat_lifecycle_support'
-require 'java_buildpack/container/tomcat/tomcat_logging_support'
-require 'java_buildpack/container/tomcat/tomcat_access_logging_support'
-require 'java_buildpack/container/tomcat/tomcat_redis_store'
+require 'java_buildpack/container/jeusjeusjeus'
+require 'java_buildpack/container/jeusjeusjeus/jeusjeusjeus_insight_support'
+require 'java_buildpack/container/jeusjeusjeus/jeusjeusjeus_instance'
+require 'java_buildpack/container/jeusjeusjeus/jeusjeusjeus_lifecycle_support'
+require 'java_buildpack/container/jeusjeusjeus/jeusjeusjeus_logging_support'
+require 'java_buildpack/container/jeusjeusjeus/jeusjeusjeus_access_logging_support'
+require 'java_buildpack/container/jeusjeusjeus/jeus_redis_store'
 
-describe JavaBuildpack::Container::Tomcat do
+describe JavaBuildpack::Container::Jeus do
   include_context 'component_helper'
 
-  let(:component) { StubTomcat.new context }
+  let(:component) { StubJeus.new context }
 
   let(:configuration) do
-    { 'tomcat'                 => tomcat_configuration,
+    { 'jeusjeus'                 => jeusjeus_configuration,
       'lifecycle_support'      => lifecycle_support_configuration,
       'logging_support'        => logging_support_configuration,
       'access_logging_support' => access_logging_support_configuration,
       'redis_store'            => redis_store_configuration }
   end
 
-  let(:tomcat_configuration) { double('tomcat-configuration') }
+  let(:jeusjeus_configuration) { double('jeusjeus-configuration') }
 
   let(:lifecycle_support_configuration) { double('lifecycle-support-configuration') }
 
@@ -49,7 +49,7 @@ describe JavaBuildpack::Container::Tomcat do
   let(:redis_store_configuration) { double('redis-store-configuration') }
 
   it 'detects WEB-INF',
-     app_fixture: 'container_tomcat' do
+     app_fixture: 'container_jeusjeus' do
 
     expect(component.supports?).to be
   end
@@ -67,29 +67,29 @@ describe JavaBuildpack::Container::Tomcat do
   end
 
   it 'creates submodules' do
-    expect(JavaBuildpack::Container::TomcatInstance)
-      .to receive(:new).with(sub_configuration_context(tomcat_configuration))
-    expect(JavaBuildpack::Container::TomcatLifecycleSupport)
+    expect(JavaBuildpack::Container::JeusInstance)
+      .to receive(:new).with(sub_configuration_context(jeus_configuration))
+    expect(JavaBuildpack::Container::JeusLifecycleSupport)
       .to receive(:new).with(sub_configuration_context(lifecycle_support_configuration))
-    expect(JavaBuildpack::Container::TomcatLoggingSupport)
+    expect(JavaBuildpack::Container::JeusLoggingSupport)
       .to receive(:new).with(sub_configuration_context(logging_support_configuration))
-    expect(JavaBuildpack::Container::TomcatAccessLoggingSupport)
+    expect(JavaBuildpack::Container::JeusAccessLoggingSupport)
       .to receive(:new).with(sub_configuration_context(access_logging_support_configuration))
-    expect(JavaBuildpack::Container::TomcatRedisStore)
+    expect(JavaBuildpack::Container::JeusRedisStore)
       .to receive(:new).with(sub_configuration_context(redis_store_configuration))
-    expect(JavaBuildpack::Container::TomcatInsightSupport).to receive(:new).with(context)
+    expect(JavaBuildpack::Container::JeusInsightSupport).to receive(:new).with(context)
 
     component.sub_components context
   end
 
   it 'returns command' do
     expect(component.command).to eq("#{java_home.as_env_var} JAVA_OPTS=\"test-opt-2 test-opt-1 -Dhttp.port=$PORT\" " \
-                                      '$PWD/.java-buildpack/tomcat/bin/catalina.sh run')
+                                      '$PWD/.java-buildpack/jeus/bin/catalina.sh run')
   end
 
 end
 
-class StubTomcat < JavaBuildpack::Container::Tomcat
+class StubJeus < JavaBuildpack::Container::Jeus
 
   public :command, :sub_components, :supports?
 
